@@ -8,7 +8,7 @@ export const ENV_RTCPeerConfiguration = environment.RTCPeerConfiguration;
 const mediaConstraints = {
   audio: true,
   video: {width: 800, height: 600}
-  // video: {width: 1280, height: 720} // 16:9
+  // video: {width: 1280, height: 720} // haya bina ila mondial 16:9 7adari opopopopopop hadaf 9atil
   // video: {width: 960, height: 540}  // 16:9
   // video: {width: 640, height: 480}  //  4:3
   // video: {width: 160, height: 120}  //  4:3
