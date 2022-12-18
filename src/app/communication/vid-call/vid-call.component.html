@@ -1,0 +1,24 @@
+ 
+     <div class="cameras">
+
+     <div class="local-vid">
+      <p class="video-description">You :</p>
+      <video #local_video [autoplay]="true" [muted]="true"></video>
+      </div>
+
+      <div class="remote-vid">
+      <p class="video-description">remote:</p>
+      <video #received_video [autoplay]="true"></video>
+    </div>
+    
+</div>
+
+
+
+  <div class="controlls">
+ 
+  <button class="bg-gray-600 hover:bg-gray-400 px-5 py-4 rounded-full" (click)="startLocalVideo()" *ngIf="!localVideoActive"><i class="bi bi-camera-video-fill"></i></button>
+  <button class="bg-gray-600 hover:bg-gray-400 px-5 py-4 rounded-full"  (click)="pauseLocalVideo()" *ngIf="localVideoActive"><i class="bi bi-camera-video-off-fill"></i></button>
+  <button class="bg-green-600 hover:bg-green-400 px-5 py-4 rounded-full"  (click)="call()" [disabled]="inCall || !localVideoActive"><i class="bi bi-telephone-fill text-white-500"></i></button>
+  <button  class="bg-red-600 hover:bg-red-400 px-5 py-4 rounded-full"  (click)="hangUp()" [disabled]="!inCall"><i class="bi bi-telephone-minus-fill"></i></button>
+  </div> 

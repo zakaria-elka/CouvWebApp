@@ -1,0 +1,50 @@
+ .cameras{
+background-color: aqua;
+display:flex;
+
+
+ }
+ i{
+   color: aliceblue;
+ }
+ 
+.cameras{
+   height:fit-content;
+}
+.controlls{
+display:flex;
+justify-content: space-between;
+gap: 10px;
+position: relative;
+bottom: 100px;
+left:25%;
+
+transform: translate(-50%,0%);
+width: fit-content;
+ 
+ 
+}
+.local-vid{
+   background-color: rgb(138, 138, 138);
+   width: 50%;
+}
+.local-vid p{
+position: relative;
+left:50%;
+top:40px;
+color:rgb(143, 142, 142);
+width: fit-content;
+transform: translate(-50%,0%);
+}
+.remote-vid{
+   background-color: rgb(138, 138, 138);
+   width: 50%;
+}
+.remote-vid p{
+   position: relative;
+   left:50%;
+   top:40px;
+   color:rgb(61, 90, 255);
+   width: fit-content;
+   transform: translate(-0%,0%);
+   }
