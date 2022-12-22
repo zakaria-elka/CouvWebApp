@@ -1,0 +1,35 @@
+<app-verificatio-nbar [verifStep]="verificationStep"></app-verificatio-nbar>
+<div class="document-preview">
+
+<!-- <img *ngIf="!useCamera" src="../../../assets/identity.png"> -->
+
+<app-verif-step-icon  *ngIf="!useCamera" [verifStep]="verificationStep" ></app-verif-step-icon>
+<app-input *ngIf="verificationStep==0"></app-input>
+
+
+    <div *ngIf="webcamImage &&snapshotPreview" class="webcam-image snapshot-preview"  >
+
+        <img [src]="webcamImage.imageAsDataUrl" class="webcam-image"   >
+
+        <div class="image-confirm-button" (click)="upload()"><button>Confirmer?</button></div>
+        <div class="image-retake-button"><button>retake?</button></div>
+     </div>
+
+
+    <app-camera (getPicture)="handleImage($event)" *ngIf="(useCamera)" ></app-camera>
+
+
+    <!-- <button  (click)="toggleCamera(!useCamera)" class="bg-red-400" *ngIf="!useCamera">prendre une photo</button>
+    <button  (click)="toggleCamera(!useCamera)" class="bg-green-400" *ngIf="useCamera">uploader</button> -->
+    </div>
+
+<!--
+    <div>
+        <h1>here {{useCamera}}</h1>
+
+    <button (click)="toggleUseCamera()" class="start-camera" *ngIf="!useCamera&&(verificationStep==2||verificationStep==4)"  >Commencer <i class="bi bi-camera"></i></button>
+    <button (click)="nextVerif()"> Next step {{verificationStep}}</button>
+
+
+</div>
+-->

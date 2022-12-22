@@ -11,6 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChatComponent } from './communication/vid-call/vid-call.component';
+import { CameraComponent } from './camera/camera.component';
+import { WebcamModule } from 'ngx-webcam';
+import { VerificatioNbarComponent } from './verification/verificatio-nbar/verificatio-nbar.component';
+import { VerificationContainerComponent } from './verification/verification-container/verification-container.component';
+import { InputComponent } from './verification/input/input.component';
+import { VerifStepIconComponent } from './verification/verif-step-icon/verif-step-icon.component';
+
 
 
 @NgModule({
@@ -22,7 +29,12 @@ import { ChatComponent } from './communication/vid-call/vid-call.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ChatComponent
+    ChatComponent,
+    CameraComponent,
+    VerificatioNbarComponent,
+    VerificationContainerComponent,
+    InputComponent,
+    VerifStepIconComponent,
 
   ],
   imports: [
@@ -30,6 +42,7 @@ import { ChatComponent } from './communication/vid-call/vid-call.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    WebcamModule,
 
   ],
   providers: [],

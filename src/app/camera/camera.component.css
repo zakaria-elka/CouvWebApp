@@ -1,0 +1,21 @@
+ 
+.camera-box{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 49ox;
+   
+    padding: 30px;
+}
+.camera{
+     
+     margin-right: auto;
+     margin-left: auto;
+      
+}
+ 
+.btn-group button{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -1,0 +1,67 @@
+.document-preview{
+    margin-top:6%;
+    background-color: #bca2f7;
+    width: 600px;
+
+    margin-left: auto;
+    margin-right:auto;
+    border-radius: 30px;
+    height:450px;
+
+
+
+  }
+  .snapshot-preview{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+
+
+    background-color: #712FFF;
+
+}
+.webcam-image{
+    border-radius: 30px;
+}
+.image-confirm-button{
+  color: aliceblue;
+  text-align: center;
+
+}
+.image-confirm-button{
+  width:20%;
+  bottom: 50%;
+  left:50% ;
+  transform: translate(100%,0%);
+
+  position: relative;
+  bottom: 50px;
+  background-color: hsl(133, 100%, 50%);
+  border-radius: 50px;
+}
+.image-retake-button{
+  transform: translate(-100%,0%);
+
+
+
+  width:20%;
+   text-align: center;
+  left:30%;
+
+  position: relative;
+  bottom: 70px;
+  background-color: hsl(276, 100%, 50%);
+  border-radius: 50px;
+}
+.snapshot-controls{
+  background-color: blue;
+}
+.start-camera{
+  position: relative;
+  background-color: aquamarine;
+  left: 50%;
+  bottom: 50px;
+  padding: 5px 20px;
+  border-radius: 40px;
+  transform: translate(-50%,0);
+}

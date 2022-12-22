@@ -1,0 +1,20 @@
+ 
+        <div class="camera-box">   
+            <div class="camera" >
+            <webcam  [height]="400" [width]="600" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+            *ngIf="showWebcam" [switchCamera]="nextWebcamObservable"> *ngIf="isCameraExist"</webcam>
+            </div>
+            <div class="btn-group">
+                <button type="button" (click)="takeSnapshot()" class="btn btn-primary "><i class="bi bi-camera2 text-light"></i></button>
+                <!-- <button type="button" (click)="changeWebcam(true)" class="btn btn-primary">change cam</button> -->
+                <!-- <button type="button" (click)="onOffWebCam()" class="btn btn-primary">turn off</button> -->
+
+            </div>
+            
+
+ 
+
+<div *ngIf="!isCameraExist">
+Camera device not exist
+</div>
+ </div> 
