@@ -11,6 +11,31 @@
 
 
   }
+  .card-elemment{
+
+    display: block;
+    height: 300px;
+
+    margin-left: auto;
+    margin-right:auto;
+    opacity: 100%;
+    padding-top: 50px;
+
+
+
+   }
+   .phone-number-verif-box{
+    position: relative;
+
+    bottom: 100px;
+
+
+   }
+   .phone-number-verif-box input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
   .snapshot-preview{
     height: 100%;
     width: 100%;

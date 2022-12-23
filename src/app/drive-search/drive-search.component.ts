@@ -24,7 +24,8 @@ export class DriveSearchComponent  {
 
 offerSubmit(){
 
-  console.log(this.offreForm.value);
+  window.location.href="/offer?city="+this.offreForm.value.city+"&des="+this.offreForm.value.dest+
+  "&date="+this.offreForm.value.date;
 
 
 }

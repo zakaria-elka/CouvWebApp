@@ -3,8 +3,24 @@
 
 <!-- <img *ngIf="!useCamera" src="../../../assets/identity.png"> -->
 
-<app-verif-step-icon  *ngIf="!useCamera" [verifStep]="verificationStep" ></app-verif-step-icon>
-<app-input *ngIf="verificationStep==0"></app-input>
+<div *ngIf="!useCamera" class="document-preview">
+
+  <img class="card-elemment" src='../../../assets/img/phone.png' *ngIf="verificationStep==0"/>
+  <img class="card-elemment" src='../../../assets/img/temp.png' *ngIf="verificationStep==1"/>
+
+  <img class="card-elemment" src='../../../assets/img/identity.png' *ngIf="verificationStep==2"/>
+  <img class="card-elemment" src='../../../assets/img/temp.png' *ngIf="verificationStep==3"/>
+
+  <img class="card-elemment" src='../../../assets/img/carownership.png' *ngIf="verificationStep==4"/>
+  <img class="card-elemment" src='../../../assets/img/temp.png'  *ngIf="verificationStep==5"/>
+
+</div>
+
+<div *ngIf="verificationStep==0" class="phone-number-verif-box">
+  <input [formControl]="code" id="code" type="text" placeholder="Tappez votre numero">
+  <button (click)="nextVerif()" class="ml-64 mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Check</button>
+
+  </div>
 
 
     <div *ngIf="webcamImage &&snapshotPreview" class="webcam-image snapshot-preview"  >
@@ -19,8 +35,9 @@
     <app-camera (getPicture)="handleImage($event)" *ngIf="(useCamera)" ></app-camera>
 
 
-    <!-- <button  (click)="toggleCamera(!useCamera)" class="bg-red-400" *ngIf="!useCamera">prendre une photo</button>
-    <button  (click)="toggleCamera(!useCamera)" class="bg-green-400" *ngIf="useCamera">uploader</button> -->
+    <!--<button  (click)="toggleCamera(!useCamera)" class="bg-red-400" *ngIf="!useCamera">prendre une photo</button>
+    <button  (click)="toggleCamera(!useCamera)" class="bg-green-400" *ngIf="useCamera">uploader</button>-->
+    <button (click)="toggleUseCamera()" class="start-camera" *ngIf="!useCamera&&(verificationStep==2||verificationStep==4)"  >Commencer <i class="bi bi-camera"></i></button>
     </div>
 
 <!--
