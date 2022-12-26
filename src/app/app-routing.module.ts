@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { OfferComponent } from './offer/offer.component';
 import { RegisterComponent } from './register/register.component';
 import { VerificationContainerComponent } from './verification/verification-container/verification-container.component';
-
+import { AddoffreComponent } from './addoffre/addoffre.component';
 
 
 
@@ -16,7 +16,8 @@ const routes: Routes = [
 {path:'offer',component:OfferComponent},
 {path:'register',component:RegisterComponent},
 {path:"call",component:ChatComponent},
-{path:"verification",component:VerificationContainerComponent}
+{path:"verification",component:VerificationContainerComponent},
+{path:"addoffre",component:AddoffreComponent}
 
 
 

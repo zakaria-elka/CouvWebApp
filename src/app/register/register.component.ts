@@ -15,14 +15,14 @@ export class RegisterComponent implements OnInit {
 
   userinfo:User ;
 
-
+  Nalert: boolean = false;
   RegForm=new FormGroup({
     email:new FormControl(),
     password:new FormControl(),
-    firstName:new FormControl(),
-    LastName:new FormControl(),
+    firstname:new FormControl(),
+    lastname:new FormControl(),
     phone:new FormControl(),
-    Cni:new FormControl(),
+    cni:new FormControl(),
   })
 
   ngOnInit(): void {
@@ -31,10 +31,18 @@ export class RegisterComponent implements OnInit {
 
   RegSubmit(){
 
-    this.authService.UserReg(this.RegForm.controls['firstName'].value,this.RegForm.controls['LastName'].value,
-    this.RegForm.controls['phone'].value,this.RegForm.controls['Cni'].value,
-    this.RegForm.controls["email"].value,this.RegForm.controls['password'].value)
-    .subscribe(res=>{this.userinfo=res})
+
+    this.authService.UserReg( this.RegForm.controls['email'].value,
+    this.RegForm.controls['password'].value,
+    this.RegForm.controls['firstname'].value,
+    this.RegForm.controls['lastname'].value,
+    this.RegForm.controls['phone'].value,
+    this.RegForm.controls['cni'].value)
+
+    .subscribe(res=>{this.userinfo=res;
+    sessionStorage.setItem("log",JSON.stringify(res));
+    this.Nalert=true;
+  })
 
 
 
@@ -43,7 +51,13 @@ export class RegisterComponent implements OnInit {
 
 
   }
+  public close(){
 
+
+    this.Nalert=false;
+    window.location.href='/home';
+
+   }
 
 
 

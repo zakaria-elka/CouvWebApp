@@ -1,13 +1,13 @@
-import { LoginComponent } from "../login/login.component";
+import { Car } from "./car";
 
 export interface User {
   id:number;
   email:string;
-  firstName:string;
+  firstname:string;
   verificationStep:number;
-  phoneNumber:string;
+  phone:string;
   password:string;
-  lastName:string;
+  lastname:string;
   personalIdConfirmed:boolean;
   carRegConfirmed:boolean;
   personalIdCard:Array<any>;
@@ -16,7 +16,7 @@ export interface User {
   cin:string;
   emailVerified:boolean;
   phoneNumberVerified:boolean;
-
+  car:Car;
 
 
 }

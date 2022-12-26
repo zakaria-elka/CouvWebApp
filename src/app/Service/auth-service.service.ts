@@ -17,13 +17,15 @@ export class AuthServiceService {
   }
 
 
-  UserReg(firstName:string,LastName:string,phone:string,email:string,Cni:string,password:string):
+  UserReg(email:string,password:string,firstname:string,lastname:string,phoneNumber:string,cni:string):
   Observable<any>{
 
-    const data={firstName,LastName,phone,email,Cni,password}
+    const data={email,password,firstname,lastname,phoneNumber,cni}
     return this.http.post<any>("http://localhost:4500/api/auth/user/signup",data)
 
   }
+
+
 
 
 

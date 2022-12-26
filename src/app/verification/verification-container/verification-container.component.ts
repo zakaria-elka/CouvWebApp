@@ -2,7 +2,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { WebcamImage } from 'ngx-webcam/public_api';
 import { MediaServicesService } from 'src/app/Service/media-services.service';
-import { FormControl } from '@angular/forms';
+import { FormControl,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-verification-container',
@@ -17,12 +17,27 @@ export class VerificationContainerComponent implements OnInit {
   controllsOn:boolean=true;
   verificationStep:number=0;
   code = new FormControl('');
+  CarForm=new FormGroup({
+    CarBrand:new FormControl(),
+    CarModel:new FormControl(),
+    CarNum:new FormControl(),
+    CarCap:new FormControl()
+  })
+  log = sessionStorage.getItem('log');
+  jlog= JSON.parse(this.log);
 
   constructor(private mediaServices:MediaServicesService) { }
 
   ngOnInit(): void {
+    if(this.jlog==null){
+
+     window.location.href="/home";
+
+    }else{
     this.stepEvent()
     this.controllsOn=false;
+    alert("We send you a code in your phone")
+  }
 
   }
   upload():void{
@@ -38,10 +53,17 @@ while (n--) {
 }
 const file: File = new File([u8arr], "this.imageName")
     const fd=new FormData;
-    fd.append("personalid",file);
-    fd.append("userid","1");
-    this.mediaServices.uploadIdentity(fd);
+    if(this.verificationStep>4){
 
+      fd.append("carreg",file);
+      fd.append("userid",this.jlog.id);
+      this.mediaServices.uploadCarDoc(fd);
+
+    }else{
+    fd.append("personalid",file);
+    fd.append("userid",this.jlog.id);
+    this.mediaServices.uploadIdentity(fd);
+    }
 
   }
 
@@ -64,11 +86,22 @@ const file: File = new File([u8arr], "this.imageName")
   toggleUseCamera(){
     this.useCamera=!this.useCamera
   }
+
+  postCardata(){
+
+    this.mediaServices.addCar(this.jlog.id,
+    this.CarForm.controls['CarBrand'].value,
+    this.CarForm.controls['CarModel'].value,
+    this.CarForm.controls['CarNum'].value,
+    this.CarForm.controls['CarCap'].value,
+    )
+
+  }
+
   nextVerif(){
-    // 0 verify phone n , 1 upload docum , 2 wait, 3 upload docum, 4 wait , 5 done
 
 
-    if(this.verificationStep<=5){
+    if(this.verificationStep<6){
 
       if(this.verificationStep==0 ){
 
@@ -91,6 +124,8 @@ const file: File = new File([u8arr], "this.imageName")
         this.stepEvent()}
 
 
+
+
       if(this.verificationStep==1 || this.verificationStep==3 ){
 
         setTimeout(()=>{
@@ -100,9 +135,25 @@ const file: File = new File([u8arr], "this.imageName")
 
         }, 1500);
 
+       if(this.verificationStep ==3 ){
+
+        setTimeout(()=>{
+
+          if (confirm('You can skip this step if you wont be a driver! Would You skip it?')) {
+            window.location.href="/home";
+
+          }
+
+        }, 2100);
+
+
+       }
+
         }
 
-      if(this.verificationStep==5){
+
+
+      if(this.verificationStep==6){
 
         setTimeout(()=>{
 

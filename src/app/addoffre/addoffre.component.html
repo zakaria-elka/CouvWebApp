@@ -1,0 +1,167 @@
+<app-nav-bar-compo></app-nav-bar-compo>
+<div id="formRegister">
+<form [formGroup]="addoffForm" (ngSubmit)="postdata()">
+  <div *ngIf="step==0" class="relative z-0 mb-6 w-full group">
+      <input formControlName="depart" list="MorrocoCity" type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+      <datalist id="MorrocoCity">
+        <option value="Agadir">Agadir</option>
+        <option value="Al Hoceima">Al Hoceima</option>
+        <option value="Azilal">Azilal</option>
+        <option value="Beni Mellal">Beni Mellal</option>
+        <option value="Ben Slimane">Ben Slimane</option>
+        <option value="Boulemane">Boulemane</option>
+        <option value="Casablanca">Casablanca</option>
+        <option value="Chaouen">Chaouen</option>
+        <option value="El Jadida">El Jadida</option>
+        <option value="El Kelaa des Sraghna">El Kelaa des Sraghna</option>
+        <option value="Er Rachidia">Er Rachidia</option>
+        <option value="Essaouira">Essaouira</option>
+        <option value="Fes">Fes</option>
+        <option value="Figuig">Figuig</option>
+        <option value="Guelmim">Guelmim</option>
+        <option value="Ifrane">Ifrane</option>
+        <option value="Kenitra">Kenitra</option>
+        <option value="Khemisset">Khemisset</option>
+        <option value="Khenifra">Khenifra</option>
+        <option value="Khouribga">Khouribga</option>
+        <option value="Laayoune">Laayoune</option>
+        <option value="Larache">Larache</option>
+        <option value="Marrakech">Marrakech</option>
+        <option value="Meknes">Meknes</option>
+        <option value="Nador">Nador</option>
+        <option value="Ouarzazate">Ouarzazate</option>
+        <option value="Oujda">Oujda</option>
+        <option value="Rabat-Sale">Rabat-Sale</option>
+        <option value="Safi">Safi</option>
+        <option value="Settat">Settat</option>
+        <option value="Sidi Kacem">Sidi Kacem</option>
+        <option value="Tangier">Tangier</option>
+        <option value="Tan-Tan">Tan-Tan</option>
+        <option value="Taounate">Taounate</option>
+        <option value="Taroudannt">Taroudannt</option>
+        <option value="Tata">Tata</option>
+        <option value="Taza">Taza</option>
+        <option value="Tetouan">Tetouan</option>
+        <option value="Tiznit">Tiznit</option>
+      </datalist>
+      <label for="depart" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City Depart</label>
+  </div>
+  <div *ngIf="step==0" class="relative z-0 mb-6 w-full group">
+      <input formControlName="adress" type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+      <label for="adress" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City Adress</label>
+  </div>
+  <div *ngIf="step==0" class="relative z-0 mb-6 w-full group">
+    <input formControlName="des" list="MorrocoCity2" type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+    <datalist id="MorrocoCity2">
+      <option value="Agadir">Agadir</option>
+      <option value="Al Hoceima">Al Hoceima</option>
+      <option value="Azilal">Azilal</option>
+      <option value="Beni Mellal">Beni Mellal</option>
+      <option value="Ben Slimane">Ben Slimane</option>
+      <option value="Boulemane">Boulemane</option>
+      <option value="Casablanca">Casablanca</option>
+      <option value="Chaouen">Chaouen</option>
+      <option value="El Jadida">El Jadida</option>
+      <option value="El Kelaa des Sraghna">El Kelaa des Sraghna</option>
+      <option value="Er Rachidia">Er Rachidia</option>
+      <option value="Essaouira">Essaouira</option>
+      <option value="Fes">Fes</option>
+      <option value="Figuig">Figuig</option>
+      <option value="Guelmim">Guelmim</option>
+      <option value="Ifrane">Ifrane</option>
+      <option value="Kenitra">Kenitra</option>
+      <option value="Khemisset">Khemisset</option>
+      <option value="Khenifra">Khenifra</option>
+      <option value="Khouribga">Khouribga</option>
+      <option value="Laayoune">Laayoune</option>
+      <option value="Larache">Larache</option>
+      <option value="Marrakech">Marrakech</option>
+      <option value="Meknes">Meknes</option>
+      <option value="Nador">Nador</option>
+      <option value="Ouarzazate">Ouarzazate</option>
+      <option value="Oujda">Oujda</option>
+      <option value="Rabat-Sale">Rabat-Sale</option>
+      <option value="Safi">Safi</option>
+      <option value="Settat">Settat</option>
+      <option value="Sidi Kacem">Sidi Kacem</option>
+      <option value="Tangier">Tangier</option>
+      <option value="Tan-Tan">Tan-Tan</option>
+      <option value="Taounate">Taounate</option>
+      <option value="Taroudannt">Taroudannt</option>
+      <option value="Tata">Tata</option>
+      <option value="Taza">Taza</option>
+      <option value="Tetouan">Tetouan</option>
+      <option value="Tiznit">Tiznit</option>
+    </datalist>
+
+    <label for="des" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Destination</label>
+  </div>
+  <div *ngIf="step==0" class="relative z-0 mb-6 w-full group">
+    <input formControlName="date" type="date" class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+  </div>
+  <div *ngIf="step==1" class="relative z-0 mb-6 w-full group">
+    <input formControlName="Dtime" type="time" class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+    <label for="Dtime" class="peer-focus:font-medium absolute text-sm text-black dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Depart Time</label>
+  </div>
+  <div *ngIf="step==1" class="relative z-0 mb-6 w-full group">
+    <input formControlName="Atime" type="time" class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+    <label for="Atime" class="peer-focus:font-medium absolute text-sm text-black dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Arrival Time</label>
+  </div>
+  <div *ngIf="step==1" class="relative z-0 mb-6 w-full group">
+    <input formControlName="perNumb" type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+    <label for="perNumb" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Number of person</label>
+  </div>
+  <div *ngIf="step==1" class="relative z-0 mb-6 w-full group">
+    <input formControlName="price" type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+    <label for="price" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Price</label>
+  </div>
+  <div *ngIf="step==2" style="display: flex;flex-direction: column;" class="z-0 mb-6 w-full ">
+    <label for="desc" >Comment Your travel:</label>
+    <textarea  formControlName="desc" name="desc"
+              rows="5" cols="40">
+
+    </textarea>
+  </div>
+
+
+  <button *ngIf="step==0 || step==1" (click)="nextstep()" type="button" class="text-white bg-blue-700 hover:bg-blue-800   font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">Next</button>
+  <button *ngIf="step==2" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>
+
+
+
+</div>
+
+<style>
+
+#formRegister{
+
+width:72%;
+margin-left:14%;
+margin-top:10%;
+padding: 30px;
+background-color:#f4f6f6 ;
+border-radius: 25px;
+
+}
+
+
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    resize: none;
+}
+
+textarea {
+    padding: 10px;
+    max-width: 45%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+
+
+
+</style>

@@ -13,8 +13,8 @@ import { LoginComponent } from '../login/login.component';
 export class NavBarCompoComponent implements OnInit {
   isLog:boolean=false;
   isShown: boolean = false;
-  log = localStorage.getItem('log');
-
+  log = sessionStorage.getItem('log');
+  jlog= JSON.parse(this.log);
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class NavBarCompoComponent implements OnInit {
   ngOnInit(): void {
 
 
-    if(this.log=="1"){
+    if(this.jlog!=null){
 
       this.isLog=true;
 

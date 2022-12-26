@@ -35,15 +35,15 @@ export class LoginComponent implements OnInit {
 
 LogSubmit(){
 
-     this.authService.UserLogin(this.LogForm.controls['email'].value,this.LogForm.controls['password'].value)
+    this.authService.UserLogin(this.LogForm.controls['email'].value,this.LogForm.controls['password'].value)
     .subscribe(res=>{this.userinfo=res;
-      localStorage.setItem('log', "1");
+      sessionStorage.setItem('log', JSON.stringify(res));
       if(this.userinfo.verificationStep==0){
         this.Nalert=true;
       }})
 
     this.isShow=false;
-    window.location.reload();
+    //window.location.reload();
 
 
 

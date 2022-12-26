@@ -15,6 +15,7 @@ import { CameraComponent } from './camera/camera.component';
 import { WebcamModule } from 'ngx-webcam';
 import { VerificatioNbarComponent } from './verification/verificatio-nbar/verificatio-nbar.component';
 import { VerificationContainerComponent } from './verification/verification-container/verification-container.component';
+import { AddoffreComponent } from './addoffre/addoffre.component';
 
 
 
@@ -31,6 +32,7 @@ import { VerificationContainerComponent } from './verification/verification-cont
     CameraComponent,
     VerificatioNbarComponent,
     VerificationContainerComponent,
+    AddoffreComponent,
 
   ],
   imports: [
