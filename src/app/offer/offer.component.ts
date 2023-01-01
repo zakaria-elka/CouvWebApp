@@ -11,9 +11,7 @@ import { Offre } from '../Models/offre';
   styleUrls: ['./offer.component.css']
 })
 export class OfferComponent implements OnInit {
-  city:string;
-  des:string;
-  date:string;
+
   offer!:Offre[];
   offredetails:Offre;
 
@@ -24,15 +22,16 @@ export class OfferComponent implements OnInit {
     this.route.queryParams
     .subscribe(params => {
       console.log(params);
-      this.city = params.city;
-      this.des = params.des;
-      this.date=params.date;
+
+      this.offreSer.Getoffre(params.depart,params.arrival,params.date).subscribe(res=>{
+        console.log(res)
+        this.offer=res;
+    })
     });
 
 
-   this.offreSer.Getoffre(this.city,this.des,this.date).subscribe(res=>{
-    this.offer=res;
-    ;console.log(this.offer)})
+
+
 
   }
 

@@ -12,8 +12,8 @@ export class OffreService {
 
     Getoffre(city:string,des:string,date:string):Observable<any>{
 
-
-      return this.http.get<any>("http://localhost:4500/api/offers/search?depart="+city+"&arrival="+des+"&date="+date)
+return this.http.get<any>("http://localhost:4500/api/offers/search?depart="+city+"&arrival="+des+"&date="+
+date.split("-").reverse().join("-"))
 
     }
 

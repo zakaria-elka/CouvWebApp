@@ -25,19 +25,22 @@
 
   <div style="text-align: center;">
   <h2 style="font-size: 20px;font-weight: bolder;">{{item.arrival}}</h2>
-  <h5>{{item.arrival}}</h5>
+  <h5>{{item.arrival_time}}</h5>
 
   </div>
-  <h2 style="margin-left: 10%;margin-top:20px;font-size: 15px;">{{item.available_seats}}</h2>
-  <h2 style="margin-left: 10%;margin-top:20px;font-size: 20px;color:red;">{{item.price}}Dhs</h2>
+  <h2 style="margin-left: 10%;margin-top:20px;font-size: 15px;
+  color: lightblue;font-weight: bold;">{{item.available_seats}} place</h2>
+  <h2 style="margin-left: 10%;margin-top:20px;font-size: 20px;color: brown;
+  font-weight: bold;font-family:cursive;font-style: italic;">{{item.price}}Dhs</h2>
   </div>
 
   <div class="info2">
   <img class='userimg' src="assets/img/user.png" alt="user"/>
-   <h2 style="margin-left:20px;font-weight: bolder;margin-top:25px;">{{item.driver}}</h2>
-   <!--
-  <img style="margin-left:20px;width:30px;height: 30px;margin-top: 20px;" src="assets/img/certif.png" alt="user"/>
--->
+   <h2 style="margin-left:20px;font-weight: bolder;margin-top:25px;">{{item.driverName}}</h2>
+
+  <img style="margin-left:20px;width:30px;height: 30px;margin-top: 20px;" src="assets/img/etoile.png" alt="user"/>
+  <p style="padding-top: 25px;padding-left: 5px;">3.5</p>
+
   <button (click)="getdetaills(item)" style="margin-left: 5%;" class="mt-3 w-40 h-12 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Dettails</button>
   </div>
 
@@ -46,7 +49,34 @@
 </div>
 <div id="details">
 <h2 *ngIf="offredetails==null">Selection un trajet pour consulter details</h2>
-<h3 *ngIf="offredetails">{{offredetails.depart}}</h3>
+<div *ngIf="offredetails">
+<label style="display: flex;" for="story">Depart city Adress:&nbsp;<p style="color: brown;">{{offredetails.city_adr}}</p></label>
+
+</div>
+<div *ngIf="offredetails">
+  <label style="display: flex;" for="story">Travel duration:&nbsp;<p style="color: brown;">3h00min</p></label>
+
+</div>
+<div *ngIf="offredetails">
+  <label style="display: flex;" for="story">Driver:&nbsp;<p style="color: brown;">{{offredetails.driverName}}</p></label>
+
+  </div>
+<div *ngIf="offredetails">
+    <label style="display: flex;" for="story">DriverDescription:&nbsp;<p style="color: brown;">hassan wa7ed siyed drafat</p></label>
+
+</div>
+<div *ngIf="offredetails">
+  <label style="display: flex;" for="story">Car:&nbsp;<p style="color: brown;">Toyota yaris</p></label>
+
+</div>
+<div *ngIf="offredetails">
+  <label  for="story">Description :</label>
+  <textarea disabled id="story" name="story"
+  rows="5" cols="33">
+{{offredetails.description}}
+</textarea>
+</div>
+<button *ngIf="offredetails" class="mt-3 w-40 h-12 bg-gray-700 hover:bg-gray-700 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-700 rounded">Reserve</button>
 </div>
 </body>
 </html>
@@ -66,7 +96,7 @@
 width: 35%;
 padding: 10px;
 position:fixed;
-top:30%;
+top:25%;
 right:7%;
 background-color:       #f0f3f4;
 border-radius: 5px;
@@ -133,4 +163,25 @@ justify-content: center;
 
 }
 
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
 </style>

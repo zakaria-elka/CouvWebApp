@@ -15,6 +15,8 @@ import { Injectable } from '@angular/core';
 export class LoginComponent implements OnInit {
   @Input() isShow: boolean = false;
   Nalert: boolean = false;
+  Nalert2: boolean = false;
+  Nalert3: boolean = false;
   userinfo:User ;
 
 
@@ -42,6 +44,7 @@ LogSubmit(){
         this.Nalert=true;
       }})
 
+    //this.Nalert2=true;
     this.isShow=false;
     //window.location.reload();
 

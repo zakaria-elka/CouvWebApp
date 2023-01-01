@@ -16,6 +16,7 @@ import { WebcamModule } from 'ngx-webcam';
 import { VerificatioNbarComponent } from './verification/verificatio-nbar/verificatio-nbar.component';
 import { VerificationContainerComponent } from './verification/verification-container/verification-container.component';
 import { AddoffreComponent } from './addoffre/addoffre.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -33,6 +34,7 @@ import { AddoffreComponent } from './addoffre/addoffre.component';
     VerificatioNbarComponent,
     VerificationContainerComponent,
     AddoffreComponent,
+    AdminComponent,
 
   ],
   imports: [
@@ -41,6 +43,7 @@ import { AddoffreComponent } from './addoffre/addoffre.component';
     ReactiveFormsModule,
     HttpClientModule,
     WebcamModule,
+
 
   ],
   providers: [],

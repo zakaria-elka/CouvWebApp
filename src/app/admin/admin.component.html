@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div  *ngIf="isShown==false" class="container">
+
+        <div class="w3-container" >
+
+
+          <div class="w3-card-4">
+            <div style="height: 30px;padding: 5px;" class="w3-container w3-green">
+              <h2 id="title">Admin/password</h2>
+            </div>
+
+            <form class="w3-container" style="background-color: white;margin-top: 10px;" >
+              <p>
+              <input class="w3-input" type="text" [formControl]="code" id="code">
+              <label for="domain" >Your Admin password</label></p>
+              <p>
+                <button style="margin-top: 10px;margin-bottom: 10px;" class="w3-btn w3-blue" type='button' (click)="getcode()">check</button>
+
+            </form>
+          </div>
+        </div>
+    </div>
+<div  *ngIf="isShown==true" class="overflow-x-auto relative">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="py-3 px-6">
+                  id
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Name
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Email
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  CIN
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Details
+            </th>
+              <th scope="col" class="py-3 px-6">
+
+            </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of data" class="bg-white dark:bg-gray-800">
+              <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{item.id}}
+              </th>
+              <td class="py-4 px-6">
+                  {{item.last_name}}
+              </td>
+              <td class="py-4 px-6">
+                  {{item.email}}
+              </td>
+              <td class="py-4 px-6">
+                  {{item.Cin}}
+              </td>
+              <td class="py-4 px-6">
+                <button style="margin-bottom: 10px;margin-top: 10px;" class="w3-btn w3-green" type='button'>Details</button>
+            </td>
+              <td class="py-4 px-6">
+                <button style="margin-bottom: 10px;margin-top: 10px;" class="w3-btn w3-blue" type='button'>Active</button>
+                <button style="margin-bottom: 10px;margin-top: 10px;" class="w3-btn w3-yellow" type='button'>Suspend</button>
+                <button style="margin-bottom: 10px;margin-top: 10px;" class="w3-btn w3-red" type='button'>delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+</body>
+</html>

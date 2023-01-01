@@ -12,7 +12,7 @@ arrival_time:string;
 available_seats:number;
 price:string;
 description:string;
-driver:User;
+driverName:User;
 
 
 
